@@ -80,6 +80,7 @@
   },
   "homepage": "https://axios-http.com",
   "devDependencies": {
+    "js-sanitizer": "git+https://github.com/Negar-Hashemi/js-sanitizer.git",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@commitlint/cli": "^17.8.1",
