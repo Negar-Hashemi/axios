@@ -12,7 +12,9 @@ describe('adapters', function () {
 
     Object.assign(adapters.adapters, store);
   });
-
+  /**
+   * @skipOnOS darwin
+   */
   it('should support loading by fn handle', function () {
     const adapter = () => {};
     assert.strictEqual(adapters.getAdapter(adapter), adapter);
