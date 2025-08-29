@@ -32,7 +32,9 @@ jobs:
         run: npm install
 
       - name: Ensure Babel presets used by sanitizer
-        run: npm i -D @babel/core @babel/preset-env @babel/preset-typescript
+        run: |
+          npm i -D @babel/core @babel/preset-env @babel/preset-typescript
+          npm i -D @babel/register
 
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         run: |
