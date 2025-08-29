@@ -31,7 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Ensure Babel presets used by sanitizer
+        run: npm i -D @babel/core @babel/preset-env @babel/preset-typescript
+
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
+          node -e "require('js-sanitizer')"  # or your setup step
           npm test
