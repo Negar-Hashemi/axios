@@ -43,4 +43,4 @@ jobs:
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
           node -e "require('js-sanitizer')"  # or your setup step
-          mocha test/unit/**/*.js --timeout 30000 --exit
+          npx mocha test/unit/**/*.js --timeout 30000 --exit
