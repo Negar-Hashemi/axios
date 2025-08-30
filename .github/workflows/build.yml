@@ -36,8 +36,11 @@ jobs:
           npm i -D @babel/core @babel/preset-env @babel/preset-typescript
           npm i -D @babel/register
 
+      - name: Ensure Mocha present
+        run: npm i -D mocha
+
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
           node -e "require('js-sanitizer')"  # or your setup step
-          npm test
+          mocha test/unit/**/*.js --timeout 30000 --exit
